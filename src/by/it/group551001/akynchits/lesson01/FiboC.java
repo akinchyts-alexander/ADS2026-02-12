@@ -6,6 +6,8 @@ package by.it.group551001.akynchits.lesson01;
  * время расчета должно быть не более 2 секунд
  */
 
+
+
 public class FiboC {
 
     private long startTime = System.currentTimeMillis();
@@ -24,7 +26,23 @@ public class FiboC {
     long fasterC(long n, int m) {
         //Интуитивно найти решение не всегда просто и
         //возможно потребуется дополнительный поиск информации
-        return -1L;
+        long[] ost = new long[6*m+2];
+        boolean isNotFind = true;
+
+        int i = 3;
+        ost[0] = 0;
+        ost[1] = 1;
+        ost[2] = 1;
+        while (isNotFind) {
+            ost[i] = (ost[i-1] + ost[i-2]) % m;
+           if (ost[i - 1] == 0 && ost[i] == 1) {
+               isNotFind = false;
+           }
+            i++;
+        }
+
+        long result = n % (i-1);
+        return  ost[(int) result];
     }
 
 
