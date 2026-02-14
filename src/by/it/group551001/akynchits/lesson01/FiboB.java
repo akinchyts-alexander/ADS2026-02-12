@@ -24,8 +24,21 @@ public class FiboB {
 
     BigInteger fastB(Integer n) {
         //здесь нужно реализовать вариант с временем O(n) и памятью O(n)
-        return BigInteger.valueOf(-1L);
+        /*int x = 1;
+        int y = 1;
+        int z = 0;
+        if (n == 1 || n ==2) {
+            z = 1;
+        } else {
+        for (int i = 3; i <= n; i++){
+            z  = x + y;
+            x = y;
+            y = z;
+
+        }
+        }
+        return z;
     }
 
-}
+}*/
 
