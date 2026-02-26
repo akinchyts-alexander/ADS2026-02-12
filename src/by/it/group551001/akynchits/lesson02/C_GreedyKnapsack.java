@@ -44,17 +44,30 @@ public class C_GreedyKnapsack {
         //итогом является максимально воможная стоимость вещей в рюкзаке
         //вещи можно резать на кусочки (непрерывный рюкзак)
         double result = 0;
-        int price = n / W;
         for(int i = 0; i < n; i++){
-            int max = items[i].cost / items[i].weight;
+            int max = i;
             for(int j = i + 1; j < n; j++){
 
                 if (items[j].cost / items[j].weight > max) {
-                    int temp = max;
-                    max = items[j].cost/items[j].weight;
-                    items[j].cost / items[j].weight = temp;
+                    max = j;
                 }
             }
+            Item temp = items[i];
+            items[i] = items[max];
+            items[max] = temp;
+
+        }
+        int i = 0;
+        while (i < items.length){
+            if (items[i].weight < W) {
+                result += items[i].cost;
+                W -= items[i].weight;
+            }
+            else {
+                result += (double) items[i].cost * W / items[i].weight; // берём часть
+                break;
+            }
+            i++;
         }
         //тут реализуйте алгоритм сбора рюкзака
         //будет особенно хорошо, если с собственной сортировкой
