@@ -39,7 +39,7 @@ public class B_MergeSort {
         for(int j = 0; j < right - mid; j++){
             HighHalf[j] = array[mid + 1 + j];
         }
-        int k = left;
+        int k = left; 
         int i = 0;
         int j = 0;
         while(i < LowHalf.length && j < HighHalf.length){
