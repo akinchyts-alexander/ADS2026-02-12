@@ -205,7 +205,7 @@ public class MyTreeSet<E extends Comparable<? super E>> implements Set<E> {
     // ВСПОМОГАТЕЛЬНЫЕ МЕТОДЫ
     // =====================================================================
 
-    // Бинарный поиск: O(log N) вместо O(N)
+
     private int binarySearch(E key) {
         int left = 0;
         int right = size - 1;

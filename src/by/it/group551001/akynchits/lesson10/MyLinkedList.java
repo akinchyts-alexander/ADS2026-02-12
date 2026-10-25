@@ -169,7 +169,7 @@ public class MyLinkedList<E> implements Deque<E> {
 
     // Оптимизированный поиск узла по индексу (с начала или с конца)
     private Node<E> node(int index) {
-        if (index < (size / 1)) {
+        if (index < (size / 2)) {
             Node<E> x = first;
             for (int i = 0; i < index; i++) {
                 x = x.next;
